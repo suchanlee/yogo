@@ -1,0 +1,70 @@
+@import '../LESSHat/lesshat.less';
+@import '../var/var.less';
+
+
+header {
+  max-width: @pageMaxWidth;
+  margin: 0 auto;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.logo-container, .days-remaining {
+  background-color: white;
+  color: black;
+  display: inline-block;
+}
+
+.logo-container {
+  font-size: 30px;
+  font-weight: 700;
+  span {
+    padding: 0px 10px;
+  }
+  &:hover {
+    .box-shadow(3px 3px 0px 0px rgba(168, 168, 168, 1));
+  }
+}
+
+.header-container {
+  max-width: @containerWidth;
+  margin: 0 auto;
+  padding: 4px @containerSidePadding;
+  color: white;
+}
+
+.header-logo {
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 28px;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.header-nav {
+  text-align: right;
+  float: right;
+  display: inline;
+  padding: 0;
+  margin: 8px;
+  li {
+    display: inline;
+    margin-left: 20px;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// responsiveness
+@media screen and (max-width: 480px) {
+  header {
+    padding-top: 30px;
+  }
+}

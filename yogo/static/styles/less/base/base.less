@@ -1,0 +1,188 @@
+/**
+ *
+ * Base LESS file for Yogo
+ *
+ */
+
+@import '../LESSHat/lesshat.less';
+@import '../var/var.less';
+
+body {
+  margin: 0 0 0 0;
+  font-family: @sans-serif;
+  position: relative;
+  z-index: @zBase;
+}
+
+.landing, .static-page {
+  max-width: @pageMaxWidth;
+  margin: 0 auto;
+  padding: 0px @containerSidePadding;
+  padding-top: @navTopPadding;
+}
+
+.static-page {
+  p, ol, ul {
+    font-size: 1.2em;
+  }
+}
+
+.strong {
+  font-weight: 500;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  max-width: @pageMaxWidth;
+  margin: 0 auto;
+  margin-top: 80px;
+  font-size: 0.8em;
+}
+
+.footer-list {
+  padding-left: 0px;
+  text-align: center;
+  padding-top: 22px;
+  margin-bottom: 22px;
+  font-weight: 500;
+  border-top: 6px solid @grey;
+}
+
+.footer-list-item {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  a {
+    color: @dark-grey - #111;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer-copyright {
+  text-align: center;
+  color: @dark-grey;
+  margin-bottom: 20px;
+}
+
+.overlay {
+  position: fixed;
+  z-index: @zOverlay;
+  background-color: white;
+  .opacity(0.98);
+  width: 100%;
+  min-height: 100%;
+  text-align: center;
+}
+
+.overlay-centered-container {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  .translateX(-50%);
+}
+
+.overlay-hide-button {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.inline-form {
+  display: inline;
+  margin: 0;
+  position: relative;
+}
+
+// loader css from http://projects.lukehaas.me/css-loaders/
+// slightly modified
+
+.loader:before,
+.loader:after,
+.loader {
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1s infinite ease-in-out;
+  animation: load7 1s infinite ease-in-out;
+}
+.loader {
+  margin: 8em auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation-delay: 0.16s;
+  animation-delay: 0.16s;
+}
+.loader:before {
+  left: -3.5em;
+}
+.loader:after {
+  left: 3.5em;
+  -webkit-animation-delay: 0.32s;
+  animation-delay: 0.32s;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+@-webkit-keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em @blue;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0 @blue;
+  }
+}
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em @blue;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0 @blue;
+  }
+}
+
+// end loader css
+// responsiveness
+@media screen and (min-width: 481px) and (max-width: 650px) {
+  .container {
+    padding: 0px 0px;
+  }
+  .landing {
+    padding: 0px 8px;
+    padding-top: 90px;
+  }
+  footer {
+    padding: 0px 8px;
+  }
+}
+
+// responsiveness
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0px 0px;
+  }
+  .landing {
+    padding: 0px 8px;
+    padding-top: 75px;
+  }
+  footer {
+    padding: 0px 8px;
+  }
+}
